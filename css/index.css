@@ -125,20 +125,6 @@
     color: #fff;
   }
 }
-/* Desktop - 1300px (To make image background parallax) */
-@media only screen and (min-width: 81.25rem) {
-  #hero-81 {
-    background: url("https://csimg.nyc3.digitaloceanspaces.com/Hero/kitchen.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* makes the parallax effect */
-    background-attachment: fixed;
-  }
-  #hero-81 .cs-background img {
-    display: none;
-  }
-}
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
   body.dark-mode #hero-81:before,
