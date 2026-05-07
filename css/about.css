@@ -134,7 +134,13 @@
     max-width: 22.5rem;
     margin: 0;
     padding: 0;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+  #why-choose-12 .cs-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
   #why-choose-12 .cs-picture {
     /* 68px - 88px */
     width: clamp(4.25rem, 7vw, 5.5rem);
