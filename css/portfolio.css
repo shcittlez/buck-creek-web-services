@@ -1,15 +1,16 @@
 /*-- -------------------------- -->
-<---          Gallery           -->
+<---       Portfolio            -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #gallery-48 {
+  #meet-team-221 {
     padding: var(--sectionPadding);
-    position: relative;
+    background: #F1F1F4;
   }
-  #gallery-48 .cs-container {
+  #meet-team-221 .cs-container {
     width: 100%;
-    max-width: 80rem;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -17,7 +18,7 @@
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #gallery-48 .cs-content {
+  #meet-team-221 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
@@ -26,98 +27,139 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
-  #gallery-48 .cs-topper {
-    font-size: var(--topperFontSize);
-    line-height: 1.2em;
-    text-transform: uppercase;
-    text-align: inherit;
-    letter-spacing: .1em;
-    font-weight: 700;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
+  #meet-team-221 .cs-picture {
+    /* 160px - 220px */
+    width: clamp(10rem, 20vw, 13.75rem);
+    height: clamp(10rem, 20vw, 13.75rem);
+    margin-bottom: 1rem;
+    border-radius: 25%;
     display: block;
-  }
-  #gallery-48 .cs-title {
-    font-size: var(--headerFontSize);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: inherit;
-    max-width: 43.75rem;
-    margin: 0 0 1rem 0;
-    color: var(--headerColor);
     position: relative;
+    /* clips the corners off the image tag */
+    overflow: hidden;
   }
-  #gallery-48 .cs-title {
-    /* Override.  cs-topper cs-title and first cs-text should be removed and put into your global css sheet so it can control every instance of them on your site and is consistent. This selector is a section specific override that stays inside this stitch */
-    margin: 0;
-    max-width: 20ch;
-  }
-  #gallery-48 .cs-image-group {
-    /* used rem so it doesn't scale with the font size of on parent */
-    font-size: min(1.1vw, 1em);
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    /* 8px - 20px */
-    gap: clamp(0.5rem, 2vw, 1.25rem);
-  }
-  #gallery-48 .cs-row {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    /* 8px - 20px */
-    gap: clamp(0.5rem, 2vw, 1.25rem);
-  }
-  #gallery-48 .cs-picture {
-    width: 100%;
-    position: relative;
-    display: block;
-  }
-  #gallery-48 .cs-picture img {
+  #meet-team-221 .cs-picture img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    /* Makes image behave like a background image */
     object-fit: cover;
+    transition: transform .7s;
   }
-  #gallery-48 .cs-row-1 .cs-picture-1 {
-    height: 35.4375em;
+  #meet-team-221 .cs-card-group {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
-  #gallery-48 .cs-row-1 .cs-picture-2 {
-    height: 39.3125em;
+  #meet-team-221 .cs-item {
+    list-style: none;
+    /* Changes on tablet */
+    width: 100%;
+    max-width: 21.25rem;
+    /* 16px - 20px */
+    padding: clamp(1rem, 2vw, 1.25rem);
+    padding-bottom: 1.25rem;
+    background: var(--bodyTextColorWhite);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
   }
-  #gallery-48 .cs-row-1 .cs-picture-3 {
-    height: 32em;
+  #meet-team-221 .cs-item:hover .cs-picture img {
+    transform: scale(1.1);
   }
-  #gallery-48 .cs-row-2 .cs-picture-1 {
-    height: 30.75em;
+  #meet-team-221 .cs-name {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--headerColor);
+    display: block;
   }
-  #gallery-48 .cs-row-2 .cs-picture-2 {
-    height: 32.3125em;
+  #meet-team-221 .cs-job-title {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+    display: block;
   }
-  #gallery-48 .cs-row-2 .cs-picture-3 {
-    height: 39.3125em;
+  #meet-team-221 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 0.75rem;
+    color: #7D799C;
   }
-  #gallery-48 .cs-row-3 .cs-picture-1 {
-    height: 39.0625em;
+  #meet-team-221 .cs-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
   }
-  #gallery-48 .cs-row-3 .cs-picture-2 {
-    height: 28.25em;
+  #meet-team-221 .cs-link {
+    /* 28px - 32px */
+    width: clamp(1.75rem, 3vw, 2rem);
+    /* 28px - 32px */
+    height: clamp(1.75rem, 3vw, 2rem);
+    /* After making the a tag into a box, we center the image inside of it */
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* creates the 3D space for the 3D effect when spinning */
+    transform-style: preserve-3d;
+    perspective: 700px;
   }
-  #gallery-48 .cs-row-3 .cs-picture-3 {
-    height: 39.3125em;
+  #meet-team-221 .cs-link:hover .cs-icon {
+    transform: translateY(-0.3125rem) rotateY(360deg);
+  }
+  #meet-team-221 .cs-icon {
+    width: 0.875rem;
+    height: auto;
+    transition: transform .7s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #meet-team-221 .cs-container {
+    max-width: 80em;
+  }
+  #meet-team-221 .cs-card-group {
+    flex-direction: row;
+  }
+  #meet-team-221 .cs-item {
+    width: 31%;
   }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
-  body.dark-mode #gallery-48 .cs-title {
+  body.dark-mode #meet-team-221 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #meet-team-221 .cs-title,
+  body.dark-mode #meet-team-221 .cs-text,
+  body.dark-mode #meet-team-221 .cs-name,
+  body.dark-mode #meet-team-221 .cs-item-text,
+  body.dark-mode #meet-team-221 .cs-job-title {
     color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #meet-team-221 .cs-item {
+    background-color: var(--medium);
+  }
+  body.dark-mode #meet-team-221 .cs-item-text {
+    opacity: .8;
+  }
+  body.dark-mode #meet-team-221 .cs-icon {
+    /* turns icons white */
+    filter: grayscale(1) brightness(1000%);
   }
 }
 /*-- -------------------------- -->

@@ -389,7 +389,7 @@
   }
 }
 /*-- -------------------------- -->
-<---          Gallery           -->
+<---          Prices            -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
@@ -419,149 +419,72 @@
     /* centers content horizontally, set to flex-start to left align */
     align-items: flex-start;
   }
-  #gallery-453 .cs-button-group {
-    width: 100%;
-    max-width: 37.5rem;
-    margin: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 0.5rem;
-    column-gap: 1.5rem;
-  }
-  #gallery-453 .cs-button {
-    font-size: 1rem;
-    line-height: 1.5em;
-    padding: 0 0 0 1rem;
-    color: var(--bodyTextColor);
-    background-color: transparent;
-    border: none;
-    position: relative;
-    transition: color .3s;
-  }
-  #gallery-453 .cs-button:before {
-    content: '';
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background: var(--primary);
-    /* starting value, this will animate to 1 when the button is hovered, and when the active class is on it */
-    opacity: 0;
-    /* prevents mouse from interacting with it */
-    pointer-events: none;
-    position: absolute;
-    display: block;
-    top: 50%;
-    /* start -20px left of the button */
-    left: -1.25rem;
-    transform: translateY(-50%);
-    /* transition to and from the active class styles on hover*/
-    transition: opacity .3s, left .3s;
-  }
-  #gallery-453 .cs-button:hover {
-    color: var(--primary);
-    cursor: pointer;
-  }
-  #gallery-453 .cs-button:hover:before {
-    left: 0;
-    opacity: 1;
-  }
-  #gallery-453 .cs-button.cs-active {
-    /* when the button is active, add these styles to the button and its pseudo */
-    font-weight: 700;
-    color: var(--primary);
-  }
-  #gallery-453 .cs-button.cs-active:before {
-    /* animate to these values when the cs-active class is added to the button and on hover */
-    left: 0;
-    opacity: 1;
-  }
   #gallery-453 .cs-gallery {
     width: 100%;
     padding: 0;
     margin: 0;
-    /* 48px - 64px */
     margin-bottom: clamp(3rem, 3vw, 4rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
     opacity: 1;
     visibility: visible;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    left: 0;
-    /* 16px - 20px */
-    gap: clamp(1rem, 1vw, 1.25rem);
     transition: transform .7s, opacity .3s, visibility .5s, top .3s, left .3s;
-    /* makes the transfrom scaling orgin the top left corner, dictates the direction by which the scale transforms animate towards */
     transform-origin: left top;
+}
+  #gallery-453 .cs-price-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  #gallery-453 .cs-gallery.cs-hidden {
-    /* by using visibility:hidden instead of display:none, we can see the animations from the opacity and transforms, display:none won't render animations. */
-    visibility: hidden;
-    /* prevents the mouse from interacting with it */
-    pointer-events: none;
-    /* hidden galleries have a 0 opacity, and we animate the opacity to 1 when they become active */
-    opacity: 0;
-    /* this top and left value help control the animation, by setting it to position absolute and left 0, the gallery won't fly off screen to the left, it will stop its position to be at the left edge of the .cs-container (left: 0). Same for the bottom:0 value, the gallery won't go past that posiiton when it animates */
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    /* prevents the hidden galleries from overflowing the section, and makes a nice animations to transition to and from */
-    transform: scaleY(0) scaleX(0);
+
+  #gallery-453 .cs-price-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
   }
-  #gallery-453 .cs-gallery.cs-hidden .cs-image {
-    /* when gallery is hidden, add these styles to the cs-image to animate from when cs-hidden is removed from the .cs-gallery */
-    transform: translateY(2.1875rem);
-    opacity: 0;
+
+  #gallery-453 .cs-featured {
+    border: 2px solid var(--primary);
+    transform: scale(1.03);
   }
-  #gallery-453 .cs-image {
-    width: clamp(47%, 42.5vw, 48.5%);
-    /* changes at tablet */
-    aspect-ratio: 0.72985782;
-    /* clips the image corners */
-    overflow: hidden;
+
+  #gallery-453 .cs-package {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1rem;
     display: block;
-    position: relative;
-    /* when .cs-hidden is removed from the .cs-gallery, reset these values and animate from their hidden styles */
-    transform: translateY(0rem);
-    opacity: 1;
-    transition: opacity .6s, transform .6s;
   }
-  #gallery-453 .cs-image:nth-of-type(1) {
-    /* these delays stagger the reveal of each image so they all go one after the other and not all at once */
-    transition-delay: .15s;
+
+  #gallery-453 .cs-price {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
   }
-  #gallery-453 .cs-image:nth-of-type(2) {
-    transition-delay: .3s;
+
+  #gallery-453 .cs-price-desc {
+    margin-bottom: 2rem;
+    display: block;
+    opacity: 0.7;
   }
-  #gallery-453 .cs-image:nth-of-type(3) {
-    transition-delay: .45s;
+
+  #gallery-453 .cs-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  #gallery-453 .cs-image:nth-of-type(4) {
-    transition-delay: .6s;
-  }
-  #gallery-453 .cs-image:nth-of-type(5) {
-    transition-delay: .75s;
-  }
-  #gallery-453 .cs-image:nth-of-type(6) {
-    transition-delay: .9s;
-  }
-  #gallery-453 .cs-image:nth-of-type(7) {
-    transition-delay: 1.05s;
-  }
-  #gallery-453 .cs-image:nth-of-type(8) {
-    transition-delay: 1.20s;
-  }
-  #gallery-453 .cs-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes it act like a background image */
-    object-fit: cover;
+
+  #gallery-453 .cs-feature-list li {
+    line-height: 1.5;
   }
 }
 /* Tablet - 600px */
@@ -586,11 +509,6 @@
   #gallery-453 .cs-gallery {
     justify-content: space-between;
   }
-  #gallery-453 .cs-image {
-    /* 171px - 305px */
-    width: clamp(10.6875rem, 23.3%, 19.0625rem);
-    aspect-ratio: 0.71529412;
-  }
 }
 /* Dark Mode */
 @media only screen and (min-width: 0rem) {
@@ -606,7 +524,7 @@
   }
 }
 /*-- -------------------------- -->
-<---       Meet The Team        -->
+<---       Portfolio            -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
